@@ -6,8 +6,9 @@ public class Question {
         List<String> list = new ArrayList<>();
         BufferedReader bR = new BufferedReader(new InputStreamReader(System.in));
         for(;;){
-            if(bR.readLine().equals(" ")) break; //почему срабатывает только со второго раза?
-            list.add(bR.readLine());
+            String str = bR.readLine();
+            if(str.equals("1")) break;
+            list.add(str);
         }
         int max = list.get(0).length();
         for(String s: list) {

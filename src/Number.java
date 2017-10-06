@@ -3,12 +3,10 @@ import java.lang.*;
 
 public class Number {
     private int[] masNumber = new int[4];
-    private int rand;
+    private int rand, lng = 4;
 
     private Number () {
-        Random random = new Random(System.currentTimeMillis());
-        rand = random.nextInt(9876 - 1023) + 1023;
-        new Number(rand);
+       this((int)(Math.random() * Math.pow(10, 4)));
     }
 
     private Number (int number) {
@@ -18,14 +16,7 @@ public class Number {
     }
 
     public static void main(String[] args) {
-        Number number;
-        for(;;) {
-            number = new Number();
-            if(number.masNumber[0] == 2) break;
-            number = null;
-            System.gc();
-            System.out.println("fuck!");
-        }
-        System.out.println("Готово! " + number.rand);
+        Number number = new Number();
+        System.out.println("Готово! " + number.rand + " " + number.masNumber[0]);
     }
 }
